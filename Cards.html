@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>20/10 Hạnh Phúc</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="shortcut icon" href="Logo.ico">
+
+<!--Tất cả các anh trong 1 folder sẽ chạy lần lượt time 5s 1 lần đổi-->
+<script type="text/javascript">
+  window.onload = function(){
+    setTimeout("switch_Image()", 5000);
+  }
+  var current = 1;
+  var num_image = 15;
+  function switch_Image(){
+      current++;
+      document.images['imglc'].src ='img/imglc/lc' + current + '.jpg';
+     if(current < num_image){
+       setTimeout("switch_Image()", 5000);
+     }else if(current == num_image){
+       current = 0;
+       setTimeout("switch_Image()", 5000);
+     }
+ }
+</script>
+
+</head>
+<body style="background-image:url(img/backgr.jpg)">
+<div class="container-fluid">
+    <div class="row">
+    
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+		<a href="Content.html">
+        <img  name="imglc" src="img/imglc/lc11.jpg" alt="" style="width:650px; height:570px; margin-top:20px">
+        </a>
+    </div>
+   
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+		<center>
+            <audio id="time" src="audio/Childhood-Memory-Bandari.mp3" controls autoplay="autoplay" loop>
+                <source src="audio-file.ogg" type="audio/ogg" />
+                <source src="audio-file.mp3" type="audio/mpeg" />
+            </audio>
+		</center>
+    </div>
+    
+    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+		
+    </div>
+   
+	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <a href="Content.html">
+		<marquee direction="up" scrollamount="2" loop="100"> 
+    		<p style="font-size:21px; color:#FFF;">
+   			Nhân ngày Phụ nữ Việt Nam 20/10, xin gửi đến toàn thể những người phụ nữ — những người mẹ, người chị, người em, người bạn — lời chúc sức khỏe, hạnh phúc và thật nhiều niềm vui.
+Cảm ơn những người phụ nữ đã luôn là nguồn yêu thương, là điểm tựa, là sự dịu dàng và cũng là sức mạnh âm thầm trong cuộc sống này.
+Chúc cho tất cả các chị em luôn xinh đẹp, tự tin, thành công trong công việc, viên mãn trong cuộc sống và luôn được yêu thương, trân trọng mỗi ngày — không chỉ riêng ngày hôm nay.
+Hãy luôn mỉm cười, luôn tỏa sáng và sống thật rực rỡ như những bông hoa đẹp nhất! 🌹💖
+    		</p>
+		</marquee> 
+        </a>
+    </div>
+
+<!--Chuyển trang sau 198s(Đồng thời hết bài hát-->
+<script type="text/javascript"> 
+	var jgt = 10; document.getElementById('time').innerHTML = jgt; 
+	function stime(){
+		document.getElementById('time').innerHTML = jgt; 
+		jgt = jgt - 1; 
+		if(jgt == 0){
+			clearInterval(timing); 
+			location = 'Content.html';
+			} 
+		} 
+	var timing = setInterval("stime();",19800); 
+</script>
+
+</div> 
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
